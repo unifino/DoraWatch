@@ -362,6 +362,8 @@ function refreshBackUP ( file: NS. File ) {
 
 export function organellesLoader ( lesson: TS.Lesson ): Promise<void> {
 
+    console.log(lesson );
+    
     // ! check availability of file in internet
     return new Promise ( async (rs, rx) => {
 
@@ -518,7 +520,7 @@ export async function avatar ( name: string, folderPath: string, avatarURL: stri
 
 // -- =====================================================================================
 
-export async function 
+export async function
 media ( name: string, folderPath: string, mediaURL: string, ext: ".mp3"|".mp4" ) {
 
     // TODO other formats?
@@ -529,7 +531,7 @@ media ( name: string, folderPath: string, mediaURL: string, ext: ".mp3"|".mp4" )
 
     return NS.Http.getFile( mediaURL , mediaPath )
     .then(
-        audio => mediaPath, 
+        audio => mediaPath,
         e => Promise.reject( e + '' )
     )
     .catch( e => Promise.reject( e + '' ) );

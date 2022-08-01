@@ -20,10 +20,12 @@ export function ribosomesOnServer( ins: string ): Promise<void> {
         NS.Http.getJSON( url ).then(
             ( res: TS.SSD_Res ) => {
 
-                // .. soft registration of data
-                store.state.rbssDB[ ins ] = JSON.parse( res.answer ) as TS.Ribosomes;
-                // .. hard registration of data
-                storage.saveRibosomes();
+                // // .. soft registration of data
+                // store.state.rbssDB[ ins ] = JSON.parse( res.answer ) as TS.Ribosomes;
+                // // .. add OFFROAD Ribosome
+                // storage.offRoadStarter();
+                // // .. hard registration of data
+                // storage.saveRibosomes();
                 // .. resolve
                 rs();
 
