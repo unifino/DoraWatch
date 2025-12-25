@@ -20,7 +20,7 @@
                     col=1
                     ref="darkModeSwitch"
                     class="switch"
-                    :checked="$store.state.darkMode"
+                    :checked="$store.state.appConfig.darkMode"
                     @tap="darkModeToggler();autoCollapse();"
                 />
 
@@ -126,7 +126,7 @@ darkModeToggler () {
     TM.darkModeToggler( this.$root.$children[0].$refs );
 
     setTimeout( () => {
-        ( this.$refs.darkModeSwitch as any ).nativeView.checked = store.state.darkMode
+        ( this.$refs.darkModeSwitch as any ).nativeView.checked = store.state.appConfig.darkMode
     }, 100 );
 
 }
